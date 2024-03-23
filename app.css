@@ -1,0 +1,236 @@
+.hidden {
+  display: none;
+}
+
+.message {
+  font-size: 0.5em;
+  color: white;
+
+  /* make this text color black, black border,  white background */
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+  /* centre it, make it only 30/30% */
+  width: 30em;
+  height: 30em;
+  padding: 1em;
+  border-radius: 8px;
+  position: absolute;
+
+  /* make ti respect newlines */
+  white-space: pre-wrap;
+
+
+
+
+
+
+
+}
+
+.top {
+  /* centre contents */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  z-index: 3;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* centre everything */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.container {
+  position: absolute;
+}
+
+/* bird */
+.circle {
+  --r: 30vmin;
+  /* radius of the circle */
+  --t: 8;
+  /* total number of books */
+  position: relative;
+  --w: calc(var(--r) * 1.2);
+  /* the top of the book is 20% out further than the edge of the circle */
+  width: calc(2 * var(--w));
+  height: calc(2 * var(--w));
+  margin: 0;
+  padding: 0;
+  animation: rotate 100s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.circle::before {
+  content: "";
+  width: calc(2 * var(--r));
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(var(--r) * 0.2);
+  left: calc(var(--r) * 0.2);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.book {
+  height: calc(var(--r) * 1.2);
+  width: calc(var(--r) / 5);
+  position: absolute;
+  bottom: var(--w);
+  left: calc(var(--w) - (0.5 * var(--r) / 5));
+  transform-origin: center bottom;
+  transform: rotate(calc(var(--n) * 45deg));
+  position: absolute;
+
+  margin: 0;
+  padding: 0;
+}
+
+.book:nth-child(1) {
+  --n: 1;
+}
+
+.book:nth-child(2) {
+  --n: 2;
+}
+
+.book:nth-child(3) {
+  --n: 3;
+}
+
+.book:nth-child(4) {
+  --n: 4;
+}
+
+.book:nth-child(5) {
+  --n: 5;
+}
+
+.book:nth-child(6) {
+  --n: 6;
+}
+
+.book:nth-child(7) {
+  --n: 7;
+}
+
+.book:nth-child(8) {
+  --n: 8;
+}
+
+
+.bird {
+  background-image: url("./magpie.webp");
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 14em;
+  height: 14em;
+  transform: rotate(180deg);
+}

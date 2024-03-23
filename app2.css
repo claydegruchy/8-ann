@@ -1,0 +1,99 @@
+/* bird */
+.circle2 {
+	--r: 45vmin;
+	/* radius of the circle */
+	--t: 10;
+	/* total number of books */
+	position: relative;
+	--w: calc(var(--r) * 1.2);
+	/* the top of the book is 20% out further than the edge of the circle */
+	width: calc(2 * var(--w));
+	height: calc(2 * var(--w));
+	margin: 0;
+	padding: 0;
+	animation: rotate2 50s linear infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes rotate2 {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.circle2::before {
+	content: "";
+	width: calc(2 * var(--r));
+	aspect-ratio: 1 / 1;
+	border: 1px solid black;
+	border-radius: 50%;
+	position: absolute;
+	top: calc(var(--r) * 0.2);
+	left: calc(var(--r) * 0.2);
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.book2 {
+	height: calc(var(--r) * 1.2);
+	width: calc(var(--r) / 5);
+	position: absolute;
+	bottom: var(--w);
+	left: calc(var(--w) - (0.5 * var(--r) / 5));
+	transform-origin: center bottom;
+	transform: rotate(calc(var(--n) * 45deg));
+	position: absolute;
+
+	margin: 0;
+	padding: 0;
+}
+
+.book2:nth-child(1) {
+	--n: 1;
+}
+
+.book2:nth-child(2) {
+	--n: 2;
+}
+
+.book2:nth-child(3) {
+	--n: 3;
+}
+
+.book2:nth-child(4) {
+	--n: 4;
+}
+
+.book2:nth-child(5) {
+	--n: 5;
+}
+
+.book2:nth-child(6) {
+	--n: 6;
+}
+
+.book2:nth-child(7) {
+	--n: 7;
+}
+
+.book2:nth-child(8) {
+	--n: 8;
+}
+
+
+.bird2 {
+	background-image: url("./magpie.webp");
+	background-size: contain;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 14em;
+	height: 14em;
+	transform: rotate(180deg) scale(-1, -1)
+
+
+}
